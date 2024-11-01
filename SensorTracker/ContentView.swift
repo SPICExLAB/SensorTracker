@@ -429,7 +429,7 @@ struct ContentView: View {
                     
                     if let socketClient = self.socketClient {
                         if socketClient.connection.state == .ready {
-                            let text = "phone:\(currentTime) \(motion.timestamp) \(motion.userAcceleration.x) \(motion.userAcceleration.y) \(motion.userAcceleration.z) \(motion.attitude.quaternion.x) \(motion.attitude.quaternion.y) \(motion.attitude.quaternion.z) \(motion.attitude.quaternion.w) \(motion.attitude.roll) \(motion.attitude.pitch) \(motion.attitude.yaw)\n"
+                            let text = "phone:\(currentTime) \(motion.timestamp) \(motion.userAcceleration.x) \(motion.userAcceleration.y) \(motion.userAcceleration.z) \(motion.attitude.quaternion.x) \(motion.attitude.quaternion.y) \(motion.attitude.quaternion.z) \(motion.attitude.quaternion.w) \(motion.attitude.roll) \(motion.attitude.pitch) \(motion.attitude.yaw) \(motion.rotationRate.x) \(motion.rotationRate.y) \(motion.rotationRate.z)\n"
                             socketClient.send(text: text)
                         }
                     }

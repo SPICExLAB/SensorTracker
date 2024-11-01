@@ -44,7 +44,7 @@ class MotionManager {
             }
             
             if let data = data {
-                let motionText = "\(NSDate().timeIntervalSince1970) \(data.timestamp) \(data.userAcceleration.x) \(data.userAcceleration.y) \(data.userAcceleration.z) \(data.attitude.quaternion.x) \(data.attitude.quaternion.y) \(data.attitude.quaternion.z) \(data.attitude.quaternion.w) \n"
+                let motionText = "\(NSDate().timeIntervalSince1970) \(data.timestamp) \(data.userAcceleration.x) \(data.userAcceleration.y) \(data.userAcceleration.z) \(data.attitude.quaternion.x) \(data.attitude.quaternion.y) \(data.attitude.quaternion.z) \(data.attitude.quaternion.w) \(data.rotationRate.x) \(data.rotationRate.y) \(data.rotationRate.z)\n"
 
                 if (WCSession.default.isReachable) {
                     WCSession.default.sendMessage(["motionData": motionText], replyHandler: nil)
